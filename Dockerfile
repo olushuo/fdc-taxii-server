@@ -11,8 +11,8 @@ EXPOSE 9000
 
 COPY ./conf/data-configuration.yml /conf/data-configuration.yml
 COPY ./conf/default /etc/nginx/sites-available/default
-COPY ./run.sh /conf/run.sh
+COPY ./launch_all.sh /conf/launch_all.sh
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-RUN chmod a+x /conf/run.sh
-CMD [ "bash", "-c", "/conf/run.sh" ]
+RUN chmod a+x /conf/launch_all.sh
+CMD [ "bash", "-c", "/conf/launch_all.sh" ]
